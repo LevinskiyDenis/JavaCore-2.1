@@ -4,12 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Создаю объект calculator не через new, а через функциональный интерфейс supplier, который в переменной instance
         Calculator calculator = Calculator.instance.get();
 
         // Код выдавал эксепшн, т.к. на ноль делить нельзя. Поэтому обернул в try-catch.
         int a = calculator.plus.apply(1, 2);
-        int b = calculator.minus.apply(1,1);
+        int b = calculator.minus.apply(1, 1);
 
         try {
             int c = calculator.divide.apply(a, b);
